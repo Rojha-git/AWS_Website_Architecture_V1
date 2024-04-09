@@ -2,8 +2,8 @@
 it's an common solution for website infrastructure on cloud
 
 # We have to follow below steps to create this infrastructure:
-AWS Services that we are using for this infrastrucure--
-- [1.EC2]
+AWS Services that we are using for this infrastrucure
+-[1.EC2]
 2.VPC
 3.CloudFront
 4.RDS
