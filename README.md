@@ -25,6 +25,7 @@ AWS Components that we are using for this infrastrucure
 - launch ec2 instances in each AZ (for testing you can create one in each), for serving frontend also they will act as the reverse proxy.
 - Create EKS cluster and divide the nodes equally in each AZ for HA.
 - Create two RDS instances in both AZs in which one should be primary for serving the request and another should be standby with continuous replication.
+- For Autoscalling we need to create templete where we can define the parameters about instances or nodes(for eks) and after this we will setup the autoscalling for webserver and App server's node in both of the Zones. 
 - Elasticache also we are using here for better performance it will store the cache for the database query and serving the request much faster.
 - CloudFront is acting as an Content Delivery network here, it will store the cache for the user so that they are able to resume thier journey where he left, we can say it will help to store the session so for achiving this we need to create the distribution in which source should be route53 and destination should be Application load balancer and another destination should be S3 which is for static content like term and condition page for the user also need to attcah the certifacte for serving https request.    
 - Create Hosted Zones in Route53 and provide the target as CloudFront Distribution also provide CNAME record for routing thr traffic to CF, need to confire DNS records as per the DNS name that we have.
