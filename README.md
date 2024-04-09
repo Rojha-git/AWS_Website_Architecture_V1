@@ -1,5 +1,6 @@
 # AWS_Website_Architecture_V1
 it's an common solution for website infrastructure on cloud
+![Complete Architecture for an Website](https://github.com/Rojha-git/AWS_Website_Architecture_V1/blob/main/Website_infra.PNG)
 
 # We have to follow below steps to create this infrastructure:
 AWS Components that we are using for this infrastrucure
