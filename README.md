@@ -27,4 +27,8 @@ AWS Components that we are using for this infrastrucure
 - Elasticache also we are using here for better performance it will store the cache for the database query and serving the request much faster.
 - CloudFront is acting as an Content Delivery network here, it will store the cache for the user so that they are able to resume thier journey where he left, we can say it will help to store the session so for achiving this we need to create the distribution in which source should be route53 and destination should be Application load balancer and another destination should be S3 which is for static content like term and condition page for the user also need to attcah the certifacte for serving https request.    
 - Create Hosted Zones in Route53 and provide the target as CloudFront Distribution also provide CNAME record for routing thr traffic to CF, need to confire DNS records as per the DNS name that we have.
-- 
+- Create ALB(1) and provide source as CF and target should be target-groups for ec2 instances in both zones.
+- Need to expose the Application as Load balancer mode which is deployed on the EKS after that it should be receive the traffic from the web servers.
+- We need to again provide the database username and password after building the application so that it can communicate with RDS and elasticache.
+- Need to Setup NAT gateway in public subnet to facilitate the internet in private subnet and Internet Gateway so that we can allow outbound internet traffic under the VPC so traffic will be go from IG to NAt Gateway SG.
+- here we are using VPC endpoint to accessing the services out from the vpc like cloudwatch which we are using here to monitor the EKS cluster.
